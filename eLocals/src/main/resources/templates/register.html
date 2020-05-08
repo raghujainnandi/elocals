@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
+<head>
+    <title>Elocals</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+<div class="row">
+	<div class="col-md-8 offset-md-2">
+	 	<form th:action="@{/savesignup}" th:object="${user}" method="POST">
+			
+			<h2>REGISTER USER</h2>
+			<div class="row  form-group">
+			  <div class="col">
+	              <label> FirstName</label>
+			      <input type="text"  name="firstName" placeholder=" Enter your firstname" class="form-control" required />
+			  </div>
+			  <div class="col">
+			      <label>LastName</label>
+			      <input type="text"  name="lastName" placeholder=" Enter your lastname" class="form-control" required />
+	          </div>
+	        </div>
+			<div class="row form-group">
+			  <div class="col">	
+			   	<label>E-mail</label>
+			 	<input type="text"  name="email" placeholder=" Enter your e-mail" class="form-control" required >
+			  </div>
+			</div>
+			<div class="row  form-group">
+			  <div class="col">
+			  	<label>Enter Password</label>
+			 	<input type="password"  name="password" placeholder=" Create New  password" class="form-control" required >
+			  </div>
+			  <div class="col">
+			  	<label>Confirm Password</label>
+			 	<input type="password"  name="confirmpassword" placeholder=" Confirm password" class="form-control" required >
+			  </div>
+			 </div>
+			 <hr />
+			<div class="row  form-group">
+				<div class="col">
+				   <button type="submit" class="btn btn-success">Signup</button>
+				</div>
+			</div>
+			
+		</form>
+	
+	</div>
+</div>
+
+</div>
+</body>
+</html>
+
+

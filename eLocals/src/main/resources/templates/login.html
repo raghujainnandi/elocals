@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
+<head>
+    <title>Elocals</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+<div class="row">
+	<div class="col-md-8 offset-md-2">
+	<form th:action="@{/validate}" th:object="${user}" method="POST">
+	<div class="row">
+	<div class="col-md-8 offset-md-2">
+
+		<h2>USER LOGIN</h2>
+
+		<div class="row form-group">
+			<div class="col">
+				<label> Email :</label> <input type="text" name="email"
+					placeholder=" Enter Username" class="form-control" required>
+			</div>
+		</div>
+
+
+		<div class="row form-group">
+			<div class="col">
+				<label>Password :</label> <input type="password" name="password"
+					placeholder=" Enter password" class="form-control" required>
+			</div>
+		</div>
+		
+		<button type="submit" class="btn btn-success">Login</button>
+	</form>
+
+
+	<br></br>
+
+	<h2>
+		<div th:if="${msg}" th:text="${msg}"></div>
+	</h2>
+	</div>
+	</div>
+</body>
+</html>
