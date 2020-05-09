@@ -7,15 +7,20 @@
 <div layout:fragment="content" class="container">
 <div class="row">
 	<div class="col-md-8 offset-md-2">
-	<form th:action="@{/validate}" th:object="${user}" method="POST">
+	<form th:action="@{/login}" th:object="${user}" method="POST">
 	<div class="row">
 	<div class="col-md-8 offset-md-2">
 
 		<h2>USER LOGIN</h2>
-
+		<div th:if="${param.error}" class="alert alert-danger">
+			Invalid Username and Password
+		</div>
+		<div th:if="${param.logout}" class="alert alert-success">
+			You have been logged out
+		</div>
 		<div class="row form-group">
 			<div class="col">
-				<label> Email :</label> <input type="text" name="email"
+				<label><b>Email</b></label> <input type="text" name="email"
 					placeholder=" Enter Username" class="form-control" required>
 			</div>
 		</div>
@@ -23,12 +28,12 @@
 
 		<div class="row form-group">
 			<div class="col">
-				<label>Password :</label> <input type="password" name="password"
+				<label><b>Password</b></label> <input type="password" name="password"
 					placeholder=" Enter password" class="form-control" required>
 			</div>
 		</div>
 		
-		<button type="submit" class="btn btn-success">Login</button>
+		<button type="submit" class="btn btn-success"><b>Login</b></button>
 	</form>
 
 
