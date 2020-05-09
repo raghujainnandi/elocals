@@ -45,6 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		.loginPage("/login")
 		.usernameParameter("email")
 		.passwordParameter("password")
+		.successHandler(new MyAuthenticationSuccessHandler())
 		 .defaultSuccessUrl("/welcome", true)
 		 .and()
 		.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login");
